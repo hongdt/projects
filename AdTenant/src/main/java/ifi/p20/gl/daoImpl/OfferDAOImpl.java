@@ -49,9 +49,9 @@ public class OfferDAOImpl implements OfferDAO {
 		if (offer == null) {
 			return null;
 		}
-		return new OfferInfo(offer.getName(), offer.getUser().getId(), offer.getArea(), offer.getNumber_of_parts(),
+		return new OfferInfo(offer.getId(), offer.getName(), offer.getUser().getId(), offer.getUser().getEmail(), offer.getArea(), offer.getNumber_of_parts(),
 				offer.getPrice(), offer.getCountry(), offer.getCity(), offer.getStreet(), offer.getDescription(),
-				offer.getStatus());
+				offer.getStatus(), offer.getDate());
 	}
 
 	@Override
@@ -68,9 +68,9 @@ public class OfferDAOImpl implements OfferDAO {
 		if (offer == null) {
 			return null;
 		}
-		return new OfferInfo(offer.getName(), offer.getUser().getId(), offer.getArea(), offer.getNumber_of_parts(),
+		return new OfferInfo(offer.getId(), offer.getName(), offer.getUser().getId(), offer.getUser().getEmail(), offer.getArea(), offer.getNumber_of_parts(),
 				offer.getPrice(), offer.getCountry(), offer.getCity(), offer.getStreet(), offer.getDescription(),
-				offer.getStatus());
+				offer.getStatus(), offer.getDate());
 	}
 
 	@Override
