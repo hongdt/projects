@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
@@ -32,7 +33,7 @@ public class OfferDAOImpl implements OfferDAO {
 	private SessionFactory sessionFactory;
 
 	@Autowired
-	private AccountDAO accountDAO; 
+	private AccountDAO accountDAO;
 
 	@Override
 	public Offer findOfferByLocation(String location) {
@@ -48,8 +49,9 @@ public class OfferDAOImpl implements OfferDAO {
 		if (offer == null) {
 			return null;
 		}
-		return new OfferInfo(offer.getName(), offer.getUser().getEmail(), offer.getArea(), offer.getNumber_of_parts(), offer.getPrice(), offer.getCountry(),
-				offer.getCity(), offer.getStreet(), offer.getDescription(), offer.getStatus());
+		return new OfferInfo(offer.getName(), offer.getUser().getId(), offer.getArea(), offer.getNumber_of_parts(),
+				offer.getPrice(), offer.getCountry(), offer.getCity(), offer.getStreet(), offer.getDescription(),
+				offer.getStatus());
 	}
 
 	@Override
@@ -66,66 +68,67 @@ public class OfferDAOImpl implements OfferDAO {
 		if (offer == null) {
 			return null;
 		}
-		return new OfferInfo(offer.getName(), offer.getUser().getEmail(), offer.getArea(), offer.getNumber_of_parts(), offer.getPrice(), offer.getCountry(),
-				offer.getCity(), offer.getStreet(), offer.getDescription(), offer.getStatus());
+		return new OfferInfo(offer.getName(), offer.getUser().getId(), offer.getArea(), offer.getNumber_of_parts(),
+				offer.getPrice(), offer.getCountry(), offer.getCity(), offer.getStreet(), offer.getDescription(),
+				offer.getStatus());
 	}
 
 	@Override
 	public void save(OfferInfo offerInfo) {
 		Offer offer = null;
-//
-//		boolean isNew = false;
-//		
-//		
-//		if (id > 0) {
-//			offer = this.findOfferById(id);
-//		}
+		//
+		// boolean isNew = false;
+		//
+		//
+		// if (id > 0) {
+		// offer = this.findOfferById(id);
+		// }
 		if (offer == null) {
-//			isNew = true;
+			// isNew = true;
 			offer = new Offer();
 			offer.setDate(new Date());
-			System.out.println("Date : "+offer.getDate());
+			System.out.println("Date : " + offer.getDate());
 		}
-		
+
 		offer.setName(offerInfo.getNameAdvertise());
-		System.out.println("Name Ad : "+offerInfo.getNameAdvertise());
-		
+		System.out.println("Name Ad : " + offerInfo.getNameAdvertise());
+
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
 		UserDetails userDetails = HandlerSession.currentUserDetails();
 		User user = accountDAO.findAccount(userDetails.getUsername());
-		System.out.println("Name user : "+userDetails.getUsername());
+		System.out.println("Name user : " + userDetails.getUsername());
 		offer.setUser(user);
-		
+
 		offer.setArea(offerInfo.getArea());
-		System.out.println("Area : "+offerInfo.getArea());
-		
+		System.out.println("Area : " + offerInfo.getArea());
+
 		offer.setNumber_of_parts(offerInfo.getNumberOfParts());
-		
+
 		offer.setPrice(offerInfo.getPrice());
-		System.out.println("Price : "+offerInfo.getPrice());
-		
+		System.out.println("Price : " + offerInfo.getPrice());
+
 		offer.setCountry(offerInfo.getCountry());
-		System.out.println("Country : "+offerInfo.getCountry());
-		
+		System.out.println("Country : " + offerInfo.getCountry());
+
 		offer.setCity(offerInfo.getCity());
-		System.out.println("City : "+offerInfo.getCity());
-		
+		System.out.println("City : " + offerInfo.getCity());
+
 		offer.setStreet(offerInfo.getStreet());
-		System.out.println("Street : "+offerInfo.getCity());
-		
+		System.out.println("Street : " + offerInfo.getCity());
+
 		offer.setDescription(offerInfo.getDescription());
-		System.out.println("Description : "+offerInfo.getDescription());
-		
+		System.out.println("Description : " + offerInfo.getDescription());
+
 		offer.setStatus(offerInfo.getStatus());
-		System.out.println("Status : "+offerInfo.getStatus());
+		System.out.println("Status : " + offerInfo.getStatus());
 
 		if (offerInfo.getImage1() != null) {
 			byte[] image = offerInfo.getImage1().getBytes();
 			if (image != null && image.length > 0) {
 				offer.setImage1(image);
 			}
-			System.out.println("Img1 : "+offerInfo.getImage1().getBytes());
+			System.out.println("Img1 : " + offerInfo.getImage1().getBytes());
 		}
 
 		if (offerInfo.getImage2() != null) {
@@ -133,7 +136,7 @@ public class OfferDAOImpl implements OfferDAO {
 			if (image != null && image.length > 0) {
 				offer.setImage2(image);
 			}
-			System.out.println("Img2 : "+offerInfo.getImage2().getBytes());
+			System.out.println("Img2 : " + offerInfo.getImage2().getBytes());
 		}
 
 		if (offerInfo.getImage3() != null) {
@@ -141,47 +144,31 @@ public class OfferDAOImpl implements OfferDAO {
 			if (image != null && image.length > 0) {
 				offer.setImage3(image);
 			}
-			System.out.println("Img3 : "+offerInfo.getImage3().getBytes());
+			System.out.println("Img3 : " + offerInfo.getImage3().getBytes());
 		}
-//		if (isNew) {
-			this.sessionFactory.getCurrentSession().persist(offer);
-//		}
+		// if (isNew) {
+		this.sessionFactory.getCurrentSession().persist(offer);
+		// }
 		// If error in DB, Exceptions will be thrown out immediately
 		// Nếu có lỗi tại DB, ngoại lệ sẽ ném ra ngay lập tức
 		this.sessionFactory.getCurrentSession().flush();
 	}
 
-	// @Override
-	// public PaginationResult<OfferInfo> queryProducts(int page, int maxResult,
-	// int maxNavigationPage,
-	// String likeName) {
-	// String sql = "Select new " + ProductInfo.class.getName() //
-	// + "(p.code, p.name, p.price) " + " from "//
-	// + Product.class.getName() + " p ";
-	// if (likeName != null && likeName.length() > 0) {
-	// sql += " Where lower(p.name) like :likeName ";
-	// }
-	// sql += " order by p.createDate desc ";
-	// //
-	// Session session = sessionFactory.getCurrentSession();
-	//
-	// Query query = session.createQuery(sql);
-	// if (likeName != null && likeName.length() > 0) {
-	// query.setParameter("likeName", "%" + likeName.toLowerCase() + "%");
-	// }
-	// return new PaginationResult<ProductInfo>(query, page, maxResult,
-	// maxNavigationPage);
-	// }
-
-	@Override
-	public PaginationResult<OfferInfo> queryProducts(int page, int maxResult, int maxNavigationPage) {
-		return queryProducts(page, maxResult, maxNavigationPage, null);
-	}
-
-	@Override
-	public PaginationResult<OfferInfo> queryProducts(int page, int maxResult, int maxNavigationPage, String likeName) {
-		// TODO Auto-generated method stub
-		return null;
+	public PaginationResult<OfferInfo> findOfferInfoByLocation(int page, int maxResult, int maxNavigationPage,
+			String likeKeyWord) {
+		String sql = "Select new " + OfferInfo.class.getName() //
+				+ "(o.id, o.user.id, o.name, o.price, o.area, o.number_of_parts, o.country, o.city, o.street, o.description, o.date, o.status) " + " from "//
+				+ Offer.class.getName() + " o ";
+		if (likeKeyWord != null && likeKeyWord.length() > 0) {
+			sql += " Where lower(o.country) like :likeKeyWord or lower(o.city) like :likeKeyWord or lower(o.street) like :likeKeyWord";
+		}
+		sql += " order by o.date desc ";
+		Session session = sessionFactory.getCurrentSession();
+		Query query = session.createQuery(sql);
+		if (likeKeyWord != null && likeKeyWord.length() > 0) {
+			query.setParameter("likeKeyWord", "%" + likeKeyWord.toLowerCase() + "%");
+		}
+		return new PaginationResult<OfferInfo>(query, page, maxResult, maxNavigationPage);
 	}
 
 }

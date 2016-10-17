@@ -20,7 +20,7 @@
 					AVENDREALOUER
 				</p>
 				<div id="btn-install-app-ipad">
-					<a href="#">Télécharger</a>
+					<a href="#">TÃ©lÃ©charger</a>
 				</div>
 				<div id="btn-launch-app-ipad">
 					<a>Ouvrir</a>
@@ -87,7 +87,7 @@
 								class="bloc-searchengine hp-bloc-alert"
 								onClick="emailAlert('Sorter', 'Home', 0, 'HomeSearchEngine')">
 								<span></span>
-								<div>Créer une alerte</div>
+								<div>CrÃ©er une alerte</div>
 							</div>
 							<div class="bloc-searchengine entrust-search-hp">
 								<a href="#" rel="nofollow"> <span></span>
@@ -103,7 +103,7 @@
 
 
 					<form
-						action="http://www.avendrealouer.fr/RealEstate/Home/SearchSale"
+						action="${pageContext.request.contextPath}/liste"
 						class="select-buy visible" data-ajax="true"
 						data-ajax-complete="enableSubmit(&#39;#bt-searchsale&#39;)"
 						data-ajax-mode="replace" data-ajax-update="#SearchEngine"
@@ -116,7 +116,7 @@
 									<span></span> <span>Quartier, ville, département, région</span>
 								</div>
 								<input autocomplete="off" class="place sale-rent"
-									id="Criteria_LocalityLabel" name="Criteria.LocalityLabel"
+									id="Criteria_LocalityLabel" name="key_word"
 									type="text" value="" placeholder="Où voulez vous habitez?" />
 								<div style="position: absolute; z-index: 9999;">
 									<select id="Criteria_LocalityIds" multiple="multiple"
@@ -148,14 +148,14 @@
 										d&#39;h&#244;tes</option>
 									<option value="105">Divers</option>
 								</select> <input data-val="true"
-									data-val-number="Le champ SearchTypeID doit être un nombre."
+									data-val-number="Le champ SearchTypeID doit Ãªtre un nombre."
 									id="Criteria_SearchTypeID" name="Criteria.SearchTypeID"
 									type="hidden" value="1" />
 							</div>
 						</div>
 
 						<div class="advanced-search-ctnr">
-							<span class="advanced-srch link" title="Plus de critères">
+							<span class="advanced-srch link" title="Plus de critÃ¨res">
 
 							</span>
 						</div>
@@ -188,22 +188,22 @@
 								</div>
 							</div>
 							<ul id="home-house-links">
-								<li><a title="Vente - Maison à Roanne (42)"
+								<li><a title="Vente - Maison Ã  Roanne (42)"
 									href="vente/roanne-42/b-maison/loc-101-19621.html"> Vente -
-										Maison à Roanne (42) </a></li>
-								<li><a title="Vente - Maison à Roche la Moli&#232;re (42)"
+										Maison Ã  Roanne (42) </a></li>
+								<li><a title="Vente - Maison Ã  Roche la Moli&#232;re (42)"
 									href="vente/roche-la-moliere-42/b-maison/loc-101-19452.html">
-										Vente - Maison à Roche la Molière (42) </a></li>
+										Vente - Maison Ã  Roche la MoliÃ¨re (42) </a></li>
 								<li class="more"><a
-									title="Vente - Maison à Saint Paul en Jarez (42)"
+									title="Vente - Maison Ã  Saint Paul en Jarez (42)"
 									href="vente/saint-paul-en-jarez-42/b-maison/loc-101-19843.html">
-										Vente - Maison à Saint Paul en Jarez (42) </a></li>
-								<li class="more"><a title="Vente - Maison à Planfoy (42)"
+										Vente - Maison Ã  Saint Paul en Jarez (42) </a></li>
+								<li class="more"><a title="Vente - Maison Ã  Planfoy (42)"
 									href="vente/planfoy-42/b-maison/loc-101-19827.html"> Vente
-										- Maison à Planfoy (42) </a></li>
-								<li class="more"><a title="Vente - Maison à Changy (42)"
+										- Maison Ã  Planfoy (42) </a></li>
+								<li class="more"><a title="Vente - Maison Ã  Changy (42)"
 									href="vente/changy-42/b-maison/loc-101-19629.html"> Vente -
-										Maison à Changy (42) </a></li>
+										Maison Ã  Changy (42) </a></li>
 								<li><span class="more-properties" data-type="house">Voir
 										+ d'annonces</span><span class="icon"></span></li>
 							</ul>
@@ -211,29 +211,29 @@
 						<li class="appartment">
 							<div class="picto">
 								<div class="title">
-									<span class="big">Chambres<br /></span> <span class="small">à
-										proximité</span>
+									<span class="big">Chambres<br /></span> <span class="small">Ã 
+										proximitÃ©</span>
 								</div>
 							</div>
 							<ul id="home-appartment-links">
-								<li><a title="Vente - Appartement à La Fouillouse (42)"
+								<li><a title="Vente - Appartement Ã  La Fouillouse (42)"
 									href="vente/la-fouillouse-42/b-appartement/loc-101-19722.html">
-										Vente - Appartement à La Fouillouse (42) </a></li>
-								<li><a title="Vente - Appartement à Saint Chamond (42)"
+										Vente - Appartement Ã  La Fouillouse (42) </a></li>
+								<li><a title="Vente - Appartement Ã  Saint Chamond (42)"
 									href="vente/saint-chamond-42/b-appartement/loc-101-19676.html">
-										Vente - Appartement à Saint Chamond (42) </a></li>
+										Vente - Appartement Ã  Saint Chamond (42) </a></li>
 								<li class="more"><a
-									title="Vente - Appartement à La Ricamarie (42)"
+									title="Vente - Appartement Ã  La Ricamarie (42)"
 									href="vente/la-ricamarie-42/b-appartement/loc-101-19531.html">
-										Vente - Appartement à La Ricamarie (42) </a></li>
+										Vente - Appartement Ã  La Ricamarie (42) </a></li>
 								<li class="more"><a
-									title="Vente - Appartement à Andr&#233;zieux Bouth&#233;on (42)"
+									title="Vente - Appartement Ã  Andr&#233;zieux Bouth&#233;on (42)"
 									href="vente/andrezieux-boutheon-42/b-appartement/loc-101-19543.html">
-										Vente - Appartement à Andrézieux Bouthéon (42) </a></li>
+										Vente - Appartement Ã  AndrÃ©zieux BouthÃ©on (42) </a></li>
 								<li class="more"><a
-									title="Vente - Appartement à Rive de Gier (42)"
+									title="Vente - Appartement Ã  Rive de Gier (42)"
 									href="vente/rive-de-gier-42/b-appartement/loc-101-19850.html">
-										Vente - Appartement à Rive de Gier (42) </a></li>
+										Vente - Appartement Ã  Rive de Gier (42) </a></li>
 								<li><span class="more-properties" data-type="house">Voir
 										+ d'annonces</span><span class="icon"></span></li>
 							</ul>
@@ -246,24 +246,24 @@
 								</div>
 							</div>
 							<ul id="home-appartment-links">
-								<li><a title="Vente - Appartement à La Fouillouse (42)"
+								<li><a title="Vente - Appartement Ã  La Fouillouse (42)"
 									href="vente/la-fouillouse-42/b-appartement/loc-101-19722.html">
-										Vente - Appartement à La Fouillouse (42) </a></li>
-								<li><a title="Vente - Appartement à Saint Chamond (42)"
+										Vente - Appartement Ã  La Fouillouse (42) </a></li>
+								<li><a title="Vente - Appartement Ã  Saint Chamond (42)"
 									href="vente/saint-chamond-42/b-appartement/loc-101-19676.html">
-										Vente - Appartement à Saint Chamond (42) </a></li>
+										Vente - Appartement Ã  Saint Chamond (42) </a></li>
 								<li class="more"><a
-									title="Vente - Appartement à La Ricamarie (42)"
+									title="Vente - Appartement Ã  La Ricamarie (42)"
 									href="vente/la-ricamarie-42/b-appartement/loc-101-19531.html">
-										Vente - Appartement à La Ricamarie (42) </a></li>
+										Vente - Appartement Ã  La Ricamarie (42) </a></li>
 								<li class="more"><a
-									title="Vente - Appartement à Andr&#233;zieux Bouth&#233;on (42)"
+									title="Vente - Appartement Ã  Andr&#233;zieux Bouth&#233;on (42)"
 									href="vente/andrezieux-boutheon-42/b-appartement/loc-101-19543.html">
-										Vente - Appartement à Andrézieux Bouthéon (42) </a></li>
+										Vente - Appartement Ã  AndrÃ©zieux BouthÃ©on (42) </a></li>
 								<li class="more"><a
-									title="Vente - Appartement à Rive de Gier (42)"
+									title="Vente - Appartement Ã  Rive de Gier (42)"
 									href="vente/rive-de-gier-42/b-appartement/loc-101-19850.html">
-										Vente - Appartement à Rive de Gier (42) </a></li>
+										Vente - Appartement Ã  Rive de Gier (42) </a></li>
 								<li><span class="more-properties" data-type="house">Voir
 										+ d'annonces</span><span class="icon"></span></li>
 							</ul>

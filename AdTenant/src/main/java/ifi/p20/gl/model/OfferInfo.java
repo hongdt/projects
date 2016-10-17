@@ -1,23 +1,25 @@
 package ifi.p20.gl.model;
 
-import org.springframework.web.multipart.commons.CommonsMultipartFile;
+import java.util.Date;
 
-import ifi.p20.gl.entity.User;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 public class OfferInfo {
 	private int id;
 	private String nameAdvertise;
-	private String userName;
+	private int userId;
 	private float area;
 	private int numberOfParts;
 	private float price;
 	private String country;
 	private String city;
 	private String street;
+	private Date date;
 	private CommonsMultipartFile image1;
 	private CommonsMultipartFile image2;
 	private CommonsMultipartFile image3;
 	private String description;
+	
 	private int status;
 
 	public OfferInfo() {
@@ -25,11 +27,30 @@ public class OfferInfo {
 		// TODO Auto-generated constructor stub
 	}
 
-	public OfferInfo(String nameAdvertise, String userName, float area, int numberOfParts, float price, String country, String city,
+	public OfferInfo(int id, int userId, String nameAdvertise, float price, float area, int numberOfParts,
+			String country, String city, String street, String description, Date date, int status) {
+		super();
+		this.id = id;
+		this.nameAdvertise = nameAdvertise;
+		this.userId = userId;
+		this.area = area;
+		this.numberOfParts = numberOfParts;
+		this.price = price;
+		this.country = country;
+		this.city = city;
+		this.street = street;
+		this.date = date;
+		this.description = description;
+		this.status = status;
+	}
+
+
+
+	public OfferInfo(String nameAdvertise, int userId, float area, int numberOfParts, float price, String country, String city,
 			String street, String description, int status) {
 		super();
 		this.nameAdvertise = nameAdvertise;
-		this.userName = userName;
+		this.userId = userId;
 		this.area = area;
 		this.setNumberOfParts(numberOfParts);
 		this.price = price;
@@ -48,12 +69,12 @@ public class OfferInfo {
 		this.nameAdvertise = nameAdvertise;
 	}
 
-	public String getUser() {
-		return userName;
+	public int getUser() {
+		return userId;
 	}
 
-	public void setUser(String user) {
-		this.userName = user;
+	public void setUser(int userId) {
+		this.userId = userId;
 	}
 
 	public float getArea() {
@@ -150,6 +171,14 @@ public class OfferInfo {
 
 	public void setNumberOfParts(int numberOfParts) {
 		this.numberOfParts = numberOfParts;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
 	}
 
 }

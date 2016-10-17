@@ -16,9 +16,8 @@ public interface OfferDAO {
 
 	public OfferInfo findOfferInfoById(int id);
 
-	public PaginationResult<OfferInfo> queryProducts(int page, int maxResult, int maxNavigationPage);
-
-	public PaginationResult<OfferInfo> queryProducts(int page, int maxResult, int maxNavigationPage, String likeName);
-
 	public void save(OfferInfo offerInfo);
+
+	public PaginationResult<OfferInfo> findOfferInfoByLocation(int page, int maxResult, int maxNavigationPage,
+			String likeKeyWord);
 }

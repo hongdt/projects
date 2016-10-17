@@ -42,10 +42,8 @@ import ifi.p20.gl.validator.AccountInfoValidator;
 @Transactional
 @EnableWebMvc
 public class HomeController {
-	@RequestMapping(value = { "/offre" }, method = RequestMethod.GET)
-	public String home(Model model) {
-		String key_word = null;
-		model.addAttribute("keyWord", key_word);
+	@RequestMapping(value = { "/" })
+	public String home() {
 		return "home";
 	}
 }

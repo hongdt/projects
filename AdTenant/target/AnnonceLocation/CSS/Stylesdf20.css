@@ -12379,7 +12379,7 @@ h1.wrapper,
   right: 0;
   position: relative;
   display: block;
-  margin: 0 20px 10px auto;
+  margin: 0 20px 20px auto;
   border-radius: 2px;
 }
 .mode-list > li .details .links a.sendMessage:hover {
@@ -20654,9 +20654,16 @@ sup.help {
   background-color: #fff;
   height: 53px;
 }
-.error-message {
-    font-size: 90%;
-    color: red;
-    font-style: italic;
+.mode-list>li .details .links a.mydetail {
+	background: #f5f5f5;
+	width: 100px;
+	height: 32px;
+	padding-top: 7px;
+	text-align: center;
+	right: 0;
+	position: relative;
+	display: block;
+	margin: 0 140px 20px auto;
+	border-radius: 2px;
 }
- 
+
