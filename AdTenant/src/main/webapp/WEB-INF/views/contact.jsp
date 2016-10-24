@@ -97,7 +97,7 @@ alert("Votre mot de passe est invalide")
 <input class="input-classic-grad mail" id="UserAuth_Email" maxlength="50" name="UserAuthEmail" placeholder="Email" type="email" value="" />
 <input class="input-classic-grad " id="UserAuth_Tel" maxlength="50" name="UserAuthTel" placeholder="Téléphone (vous serez contacté plus vite)" type="tel" value="" />
 <textarea rows="3" cols="36"> 
-  Nous écrire
+  Nous �crire
 </textarea>                   <div class="authError"></div>
                     <div class="btn-container">
                        

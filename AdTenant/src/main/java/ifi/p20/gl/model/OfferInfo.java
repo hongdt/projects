@@ -8,6 +8,7 @@ public class OfferInfo {
 	private int id;
 	private String nameAdvertise;
 	private int userId;
+	private String email;
 	private float area;
 	private int numberOfParts;
 	private float price;
@@ -46,11 +47,13 @@ public class OfferInfo {
 
 
 
-	public OfferInfo(String nameAdvertise, int userId, float area, int numberOfParts, float price, String country, String city,
-			String street, String description, int status) {
+	public OfferInfo(int id, String nameAdvertise, int userId, String email, float area, int numberOfParts, float price, String country, String city,
+			String street, String description, int status, Date date) {
 		super();
+		this.id = id;
 		this.nameAdvertise = nameAdvertise;
 		this.userId = userId;
+		this.email = email;
 		this.area = area;
 		this.setNumberOfParts(numberOfParts);
 		this.price = price;
@@ -59,6 +62,7 @@ public class OfferInfo {
 		this.street = street;
 		this.description = description;
 		this.status = status;
+		this.date = date;
 	}
 
 	public String getNameAdvertise() {
@@ -179,6 +183,14 @@ public class OfferInfo {
 
 	public void setDate(Date date) {
 		this.date = date;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 }

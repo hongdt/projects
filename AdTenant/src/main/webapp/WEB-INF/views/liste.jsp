@@ -48,7 +48,7 @@
 					<li data-accid="57887" data-adid="13418691" data-infos="01 44 90 03 94" data-tranid="2">
 						<a href="#"   class="picCtnr">
 							<div class="product-media">
-								<img onerror="ErrorImg(this);" src="${pageContext.request.contextPath}/offerImage1?id=${offerInfo.id}" />
+								<img onerror="ErrorImg(this);" src="${pageContext.request.contextPath}/offerImage?id=${offerInfo.id}" />
 							</div>
    						 </a>
 						
@@ -66,7 +66,7 @@
 							</ul>
 							<span class="propShortDesc">${offerInfo.description}</span> 
 							<div class="links">
-							    <a class="mydetail" href="${pageContext.request.contextPath}/detail?id=${OfferInfo.id}">Détail</a>
+							    <a class="mydetail" href="${pageContext.request.contextPath}/detail?id=${offerInfo.id}">Détail</a>
 							</div>
 							<div class="links">
 								<a href="${pageContext.request.contextPath}/contact?id=${offerInfo.id}" class="sendMessage">Contacter</a>

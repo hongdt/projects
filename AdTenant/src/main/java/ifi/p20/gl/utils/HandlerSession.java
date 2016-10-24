@@ -1,5 +1,7 @@
 package ifi.p20.gl.utils;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -14,5 +16,17 @@ public class HandlerSession {
 	        return principal instanceof UserDetails ? (UserDetails) principal : null;
 	    }
 	    return null;
+	}
+	public static String currentKeyWord(HttpServletRequest request){
+		return (String) request.getSession().getAttribute("keyWord");
+	}
+	
+	public static void setCurrentKeyWord(HttpServletRequest request, String keyWord){
+		System.out.println("set key word in session "+keyWord);
+		request.getSession().setAttribute("keyWord", keyWord);
+	}
+	
+	public static void removeCurrentKeyWord(HttpServletRequest request){
+		request.getSession().setAttribute("keyWord", null);
 	}
 }

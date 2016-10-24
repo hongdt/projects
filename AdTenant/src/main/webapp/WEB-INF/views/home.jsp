@@ -54,7 +54,7 @@
 			</div>
 			<div class="search"
 				style="position: relative; top: 25px; height: 100px">
-				<button type="button" class="ui-multiselect select-search-engine"
+				<button type="hidden" class="ui-multiselect select-search-engine"
 					aria-haspopup="true" id="Criteria_TransactionType">
 					<span><a href="#">offre</a></span>
 				</button>
@@ -87,7 +87,7 @@
 								class="bloc-searchengine hp-bloc-alert"
 								onClick="emailAlert('Sorter', 'Home', 0, 'HomeSearchEngine')">
 								<span></span>
-								<div>CrÃ©er une alerte</div>
+								<div>Créer une alerte</div>
 							</div>
 							<div class="bloc-searchengine entrust-search-hp">
 								<a href="#" rel="nofollow"> <span></span>
@@ -107,8 +107,7 @@
 						class="select-buy visible" data-ajax="true"
 						data-ajax-complete="enableSubmit(&#39;#bt-searchsale&#39;)"
 						data-ajax-mode="replace" data-ajax-update="#SearchEngine"
-						id="form0" method="post"
-						onSubmit="onSubmitAvalForm(this, &#39;#bt-searchsale&#39;)">
+						id="form0" method="post">
 						<div class="upper-block">
 							<div class="search-input">
 								<div class="newlocCtnr"></div>
