@@ -1,0 +1,11 @@
+c:\users\admin\documents\visual studio 2010\Projects\TP1\TP1\TP1\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+c:\users\admin\documents\visual studio 2010\Projects\TP1\TP1\TP1\bin\x86\Debug\TP1.exe
+c:\users\admin\documents\visual studio 2010\Projects\TP1\TP1\TP1\bin\x86\Debug\TP1.pdb
+c:\users\admin\documents\visual studio 2010\Projects\TP1\TP1\TP1\obj\x86\Debug\TP1.exe
+c:\users\admin\documents\visual studio 2010\Projects\TP1\TP1\TP1\obj\x86\Debug\TP1.pdb
+c:\users\admin\documents\visual studio 2010\Projects\TP1\TP1\TP1\bin\x86\Debug\Content\crosshair.xnb
+C:\Users\Admin\documents\visual studio 2010\Projects\TP1\TP1\TP1\obj\x86\Debug\TP1.csprojResolveAssemblyReference.cache
+C:\Users\Admin\documents\visual studio 2010\Projects\TP1\TP1\TP1\bin\x86\Debug\Content\red-star.xnb
+C:\Users\Admin\documents\visual studio 2010\Projects\TP1\TP1\TP1\bin\x86\Debug\Content\sky.xnb
+C:\Users\Admin\documents\visual studio 2010\Projects\TP1\TP1\TP1\bin\x86\Debug\Content\yellow-star.xnb
+C:\Users\Admin\documents\visual studio 2010\Projects\TP1\TP1\TP1\bin\x86\Debug\Content\SpriteFont1.xnb
